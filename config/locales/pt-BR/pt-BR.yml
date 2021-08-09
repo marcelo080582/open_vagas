@@ -5,6 +5,28 @@ pt-BR:
         logo: Logo
         name: Nome
         url: Site
+      position:
+        career: Carreira
+        careers:
+          business_intelligence: Business Intelligence
+          design: Design
+          developer: Desenvolvedor
+          information_technology: Tecnologia da Informação
+          other: Outra
+          product: Produto
+          technology: Tecnologia
+        city: Cidade
+        contract: Tipo de contrato
+        contracts:
+          clt: CLT
+          pj: PJ
+          match: A combinar
+        description: Descrição
+        name: Título da Vaga
+        publish: Esta vaga é pública?
+        remote: Esta vaga é totalmente remota?
+        state: Estado
+        summary: Resumo da descrição (até 360 caracteres)
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
@@ -13,6 +35,7 @@ pt-BR:
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
     models:
       company: Empresa
+      position: Vaga
   date:
     abbr_day_names:
     - dom

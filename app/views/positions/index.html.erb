@@ -1,2 +1,26 @@
-<h1>Positions#index</h1>
-<p>Find me in app/views/positions/index.html.erb</p>
+<h2>Minhas Vagas</h2>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Título</th>
+      <th scope="col">Carreira</th>
+      <th scope="col">Local</th>
+      <th scope="col">Tipo de contrato</th>
+      <th scope="col">Candidaturas</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @positions.each do |position| %>
+      <tr>
+        <th scope="row"><%= position.name %></th>
+        <td><%= position.career %></td>
+        <td><%= position.remote %></td>
+        <td><%= position.contract %></td>
+        <td>1 (ver detalhes)</td>
+        <td><%= link_to 'Editar', edit_position_path(position) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
