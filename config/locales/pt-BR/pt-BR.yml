@@ -22,7 +22,7 @@ pt-BR:
           pj: PJ
           match: A combinar
         description: Descrição
-        name: Título da Vaga
+        name: Título
         publish: Esta vaga é pública?
         remote: Esta vaga é totalmente remota?
         state: Estado

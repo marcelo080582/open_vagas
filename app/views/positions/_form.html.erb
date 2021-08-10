@@ -6,7 +6,12 @@
   <%= f.input :publish %>
   <%= f.input :state %>
   <%= f.input :city %>
-  <%= f.input :summary %>
-  <%= f.input :description %>
+  <%= f.input :summary, maxlength: 360, input_html: { class: 'count-textarea', rows: 4 } %>
+  <div id="counter">
+    <span id="current">0</span>
+    <span id="maximun">/ 360</span>
+  </div>
+  <%= f.label :description %>
+  <%= f.rich_text_area :description %>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
