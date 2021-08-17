@@ -12,9 +12,12 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'figaro'
-gem 'simple_form'
+gem 'bootstrap4-kaminari-views'
 gem 'devise'
+gem 'figaro'
+gem 'kaminari'
+gem 'ransack'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

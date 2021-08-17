@@ -4,7 +4,7 @@
   <%= f.input :contract, as: :select, collection: @contracts, label_method: :second, value_method: :first, include_blank: false, selected: @position.contract %>
   <%= f.input :remote %>
   <%= f.input :publish %>
-  <%= f.input :state %>
+  <%= f.input :state, as: :select, collection: Brazil.states, label_method: :second, value_method: :first, include_blank: 'Selecione um estado' %>
   <%= f.input :city %>
   <%= f.input :summary, maxlength: 360, input_html: { class: 'count-textarea', rows: 4 } %>
   <div id="counter">

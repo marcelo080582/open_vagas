@@ -3,30 +3,38 @@
   <p>Mural de vagas compartilhadas pela comunidade.</p>
 </header>
 
-<form>
+<%= search_form_for @q, url: root_path do |f| %>
   <div class="row">
     <div class="col-sm">
-      <label>Carreira</label>
-      <input class="form-control"type="text" placeholder="First name" >
+      <div class="form-group">
+        <%= f.label :name_cont, "Carreira" %>
+        <%= f.search_field :name_cont, class: 'form-control' %>
+      </div>
     </div>
     <div class="col-sm">
-      <label>Localidade</label>
-      <input class="form-control"type="text" placeholder="Last name" >
+      <div class="form-group">
+        <%= f.label :contract_eq, "Modalidade" %>
+        <%= f.select :contract_eq, options_from_collection_for_select(@contracts, :second, :first, @q.contract_eq), { include_blank: I18n.t('helpers.select.prompt') }, { class: 'form-control' } %>
+      </div>
     </div>
     <div class="col-sm">
-      <label>Local de trabalho</label>
-      <input class="form-control"type="text" placeholder="Last name" >
+      <div class="form-group">
+        <%= f.label :state_eq, "Localidade" %>
+        <%= f.select :state_eq, options_from_collection_for_select(Brazil.states, :first, :second, @q.state_eq), { include_blank: I18n.t('helpers.select.prompt') }, { class: 'form-control' } %>
+      </div>
     </div>
     <div class="col-sm">
-      <button class="btn btn-danger" type="submit" style="margin-top:31px;">Pesquisar</button>
+      <%= f.button I18n.t('helpers.submit.search'), class: 'btn btn-danger', style: 'margin-top:31px;' %>
     </div>
   </div>
-</form>
+<% end %>
 
 <% @positions.each do |position|%>
   <%= render position %>
 <% end %>
 
 <p class="d-block. text-center mt-3">
-  <a href="#">Paginação</a>
+  <div class="text-center">
+    <%= paginate @positions, theme: 'twitter-bootstrap-4' %>
+  </div>
 </p>
