@@ -1,0 +1,19 @@
+<h2><%= "#{@position.name} - #{@position.company.name}" %></h2>
+
+<p><%= "#{career_name(@position.career)} - #{@position.city} - #{@position.state}/ #{modality(@position)} - #{contract_name(@position.contract)}" %></p>
+
+<%= @position.description %>
+
+<br>
+
+<h5>Compartilhar</h5>
+
+<%= render partial: 'shared/social_network', locals: { position: @position } %>
+
+<div class="wrapper-form-applicant">
+  <% if user_signed_in? %>
+    <p><%= "Insira suas informações abaixo para se candidatar à vaga de #{@position.name}" %></p>
+  <% else %>
+    <p>Você precisa está logado para se candidatar</p>
+  <% end %>
+</div>
