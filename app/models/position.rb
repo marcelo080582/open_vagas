@@ -1,5 +1,6 @@
 class Position < ApplicationRecord
   belongs_to :company
+  has_many :applicants
   has_rich_text :description
 
   enum career: [:developer, :business_inteligence, :information_technology, :design,

@@ -13,6 +13,7 @@
 <div class="wrapper-form-applicant">
   <% if user_signed_in? %>
     <p><%= "Insira suas informações abaixo para se candidatar à vaga de #{@position.name}" %></p>
+    <%= render 'applicants/form' %>
   <% else %>
     <p>Você precisa está logado para se candidatar</p>
   <% end %>

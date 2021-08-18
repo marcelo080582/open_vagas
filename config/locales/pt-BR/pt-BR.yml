@@ -1,6 +1,10 @@
 pt-BR:
   activerecord:
     attributes:
+      applicant:
+        email: E-mail
+        name: Nome
+        phone: Telefone
       company:
         logo: Logo
         name: Nome
