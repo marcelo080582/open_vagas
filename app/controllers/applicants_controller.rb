@@ -8,9 +8,9 @@ class ApplicantsController < ApplicationController
  def create
     @applicant = current_user.applicants.new(applicant_params)
     if @applicant.save
-      flash[:notice] = 'Você acabou de aplicar para a vaga com sucesso.'
+      flash[:success] = 'Você acabou de candidatar-se para a vaga com sucesso.'
     else
-      flash[:error] = 'Houve um erro ao aplicar para a vaga. Tente novamente.'
+      flash[:error] = 'Houve um erro ao candidatar-se para a vaga. Tente novamente.'
     end
     redirect_to public_position_path(@applicant.position.slug)
   end
