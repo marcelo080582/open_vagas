@@ -12,6 +12,11 @@
           <div class="row">
             <div class="col-sm mt-3">
               <%= link_to 'Ver mais', public_position_path(position.slug), class: 'btn btn-danger' %>
+                <% if user_signed_in? %>
+                  <% if ApplicantService::Find.new(current_user.id, position.id).call.blank? %>
+                    <%= link_to 'Candidatar-se', public_position_path(position.slug), remote: true, data: { target: "#modal", toggle: "modal", backdrop: 'static', keyboard: 'false' }, class: 'btn btn-success' %>
+                  <% end %>
+                <% end %>
             </div>
             <div class="col-sm text-right mt-3 group-social-network">
               <%= render partial: 'shared/social_network', locals: { position: position } %>

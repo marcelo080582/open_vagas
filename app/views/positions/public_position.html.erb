@@ -12,7 +12,7 @@
 
 <div class="wrapper-form-applicant">
   <% if user_signed_in? %>
-    <% if ApplicantService::CheckPresence.new(current_user.id, @position.id).call %>
+    <% if ApplicantService::Find.new(current_user.id, @position.id).call.present? %>
       <p>Você já candidatou-se para essa vaga.</p>
     <% else %>
       <p><%= "Insira suas informações abaixo para candidatar-se à vaga de #{@position.name}" %></p>

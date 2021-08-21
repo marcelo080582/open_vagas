@@ -1,5 +1,5 @@
 module ApplicantService
-  class CheckPresence
+  class Find
     attr_reader :user_id, :position_id
 
     def initialize(user_id, position_id)
@@ -8,13 +8,13 @@ module ApplicantService
     end
 
     def call
-      user_have_applicant?
+      find_applicant
     end
 
     private
 
-    def user_have_applicant?
-      Applicant.where(user_id: user_id, position_id: position_id).present?
+    def find_applicant
+      Applicant.where(user_id: user_id, position_id: position_id)
     end
   end
 end
