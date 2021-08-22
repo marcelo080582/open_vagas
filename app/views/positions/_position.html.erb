@@ -7,7 +7,7 @@
         </div>
         <div class="col-10">
           <h4><%= position.name %></h4>
-          <h5><%= "#{I18n.t('activerecord.attributes.position.careers')[position.career.to_sym]} - #{position.city} - #{position.state} - #{I18n.t('activerecord.attributes.position.contracts')[position.contract.to_sym]}" %></h5>
+          <h5><%= "#{career_name(position.career)} - #{position.city} - #{position.state} - #{contract_name(position.contract)}" %></h5>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam officia porro ab, nihil quis earum ratione repudiandae, ipsam neque quidem iusto commodi ipsum dolor cumque repellat fugiat corporis voluptatibus eaque.</p>
           <div class="row">
             <div class="col-sm mt-3">

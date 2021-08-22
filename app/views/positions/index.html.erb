@@ -15,11 +15,11 @@
     <% @positions.each do |position| %>
       <tr>
         <th scope="row"><%= position.name %></th>
-        <td><%= position.career %></td>
-        <td><%= position.remote %></td>
-        <td><%= position.contract %></td>
-        <td>1 (ver detalhes)</td>
-        <td><%= link_to 'Editar', edit_position_path(position) %></td>
+        <td><%= career_name(position.career) %></td>
+        <td><%= modality(position) %></td>
+        <td><%= contract_name(position.contract) %></td>
+        <td><%= link_to "Ver candidaturas (#{position.applicants.count})",position_applicants_path(position), class: 'btn btn-warning btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_position_path(position), class: 'btn btn-primary btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>

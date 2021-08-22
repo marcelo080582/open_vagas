@@ -1,2 +1,24 @@
-<h1>Applicants#index</h1>
-<p>Find me in app/views/applicants/index.html.erb</p>
+<h2><%= "Candidaturas para à vaga: #{@position.name}" %></h2>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @applicants.each do |applicant| %>
+      <tr>
+        <th scope="row"><%= applicant.name %></th>
+        <td><%= applicant.email %></td>
+        <td><%= applicant.phone %></td>
+        <td>
+          <%= link_to 'button', '#', class: 'btn btn-primary btn-sm' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
