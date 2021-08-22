@@ -18,7 +18,11 @@
         <td><%= career_name(position.career) %></td>
         <td><%= modality(position) %></td>
         <td><%= contract_name(position.contract) %></td>
-        <td><%= link_to "Ver candidaturas (#{position.applicants.count})",position_applicants_path(position), class: 'btn btn-warning btn-sm' %></td>
+        <td>
+          <% if position.applicants.size > 0 %>
+            <%= link_to "Ver candidaturas (#{position.applicants.count})",position_applicants_path(position), class: 'btn btn-warning btn-sm' %>
+          <% end %>
+        </td>
         <td><%= link_to 'Editar', edit_position_path(position), class: 'btn btn-primary btn-sm' %></td>
       </tr>
     <% end %>

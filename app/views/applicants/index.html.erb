@@ -1,4 +1,10 @@
-<h2><%= "Candidaturas para à vaga: #{@position.name}" %></h2>
+<h2>
+  <%= "Candidaturas para à vaga: #{@position.name}" %>
+  <% if @applicants.size > 0 %>
+    <%= link_to 'Exportar CSV', position_applicants_path(@position, format: 'csv'), class: 'btn btn-primary btn-sm' %>
+    <%= link_to 'Exportar Currículos', position_applicants_path(@position, format: 'zip'), class: 'btn btn-primary btn-sm' %>
+  <% end %>
+</h2>
 
 <table class="table">
   <thead class="thead-dark">
@@ -7,7 +13,6 @@
       <th scope="col">E-mail</th>
       <th scope="col">Telefone</th>
       <th scope="col">Currículo</th>
-      <th scope="col">Ações</th>
     </tr>
   </thead>
   <tbody>
@@ -17,7 +22,6 @@
         <td><%= applicant.email %></td>
         <td><%= applicant.phone %></td>
         <td><%= link_to 'Download', rails_blob_path(applicant.resume, disposition: "attachment"), class: 'btn btn-warning btn-sm' %></td>
-        <td><%= link_to 'Exportar CSV', position_applicants_path(@position, format: 'csv'), class: 'btn btn-primary btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>

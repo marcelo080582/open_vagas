@@ -17,6 +17,7 @@ gem 'devise'
 gem 'figaro'
 gem 'kaminari'
 gem 'ransack'
+gem 'rubyzip'
 gem 'simple_form'
 
 group :development, :test do
