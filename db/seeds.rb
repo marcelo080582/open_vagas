@@ -1,7 +1,8 @@
 user = User.create!(email: 'user@gmail.com', password: '123456', password_confirmation: '123456')
 
-company = Company.create!(name: 'Company Tech', url: 'https://google.com', user_id: user.id)
+company = Company.new(name: 'Company Tech', url: 'https://google.com', user_id: user.id)
 company.logo.attach(io: File.open("#{Rails.root}/spec/fixtures/images/logotipo-empresa.jpg"), filename: 'logotipo-empresa.jpg')
+company.save!
 
 cities_and_states = [['CE', 'Fortaleza'], ['SP', 'Sao Paulo'], ['RJ', 'Rio de Janeiro']]
 5.times do |t|
