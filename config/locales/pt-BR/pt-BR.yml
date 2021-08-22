@@ -5,6 +5,7 @@ pt-BR:
         email: E-mail
         name: Nome
         phone: Telefone
+        resume: Currículo
       company:
         logo: Logo
         name: Nome

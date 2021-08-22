@@ -50,7 +50,7 @@ class PositionsController < ApplicationController
 
   def set_company
     if current_user.company.nil?
-      flash[:alert] = "Primeiramente cadastre uma empresa."
+      flash[:notice] = "Primeiramente cadastre uma empresa."
       redirect_to new_company_path
     else
       @company = current_user.company

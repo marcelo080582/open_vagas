@@ -3,6 +3,10 @@ class ApplicantsController < ApplicationController
 
   def index
     @applicants = @position.applicants
+    respond_to do |format|
+      format.html
+      format.csv { send_data @position.applicants.as_csv }
+    end
   end
 
   def new; end
@@ -35,6 +39,6 @@ class ApplicantsController < ApplicationController
   end
 
   def applicant_params
-    params.require(:applicant).permit(:name, :email, :phone, :position_id)
+    params.require(:applicant).permit(:name, :email, :phone, :position_id, :resume)
   end
 end
